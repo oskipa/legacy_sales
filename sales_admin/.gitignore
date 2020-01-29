@@ -23,5 +23,5 @@ erl_crash.dump
 sales_admin-*.tar
 
 # vim
-*.*.swp
 *.*~
+*.*.swp
