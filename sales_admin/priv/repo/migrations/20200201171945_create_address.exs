@@ -6,7 +6,7 @@ defmodule SalesAdmin.Repo.Migrations.CreateAddress do
       add :address, :string
       add :address_2, :string
       add :city, :string
-      add :tate, :string
+      add :state, :string
       add :postal_code, :string
       add :country, :string
       timestamps() 

@@ -1,5 +1,6 @@
 defmodule SalesAdmin.OrderItem do
   use Ecto.Schema
+  import Ecto.Changeset
 
   schema "order_items" do
     field :price, :decimal 
@@ -8,5 +9,11 @@ defmodule SalesAdmin.OrderItem do
 
     belongs_to :order, SalesAdmin.Order
     has_one :product, SalesAdmin.Product
+  end
+
+  def changeset(order_item, params \\ %{}) do
+    order_item
+    |> cast(params, [:price, :quantity, :order, :product])
+    |> validate_required([:price, :quantity, :order, :product])
   end
 end
