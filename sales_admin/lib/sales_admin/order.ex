@@ -6,8 +6,8 @@ defmodule SalesAdmin.Order do
     field :notes, :string 
     timestamps() 
 
-    has_one :customer, SalesAdmin.Customer
-    has_one :merchant, SalesAdmin.Merchant
+    belongs_to :customer, SalesAdmin.Customer
+    belongs_to :merchant, SalesAdmin.Merchant
     has_many :order_items, SalesAdmin.OrderItem
   end
 

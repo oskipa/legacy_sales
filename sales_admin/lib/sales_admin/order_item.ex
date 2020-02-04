@@ -8,7 +8,7 @@ defmodule SalesAdmin.OrderItem do
     timestamps() 
 
     belongs_to :order, SalesAdmin.Order
-    has_one :product, SalesAdmin.Product
+    belongs_to :product, SalesAdmin.Product
   end
 
   def changeset(order_item, params \\ %{}) do

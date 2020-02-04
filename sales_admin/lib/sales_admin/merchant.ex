@@ -6,7 +6,7 @@ defmodule SalesAdmin.Merchant do
     field :name, :string 
     timestamps() 
 
-    has_one :address, SalesAdmin.Address
+    belongs_to :address, SalesAdmin.Address
   end
 
   def changeset(merchant, params \\ %{}) do

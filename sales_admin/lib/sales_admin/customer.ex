@@ -8,7 +8,7 @@ defmodule SalesAdmin.Customer do
     field :middle_name, :string
     timestamps() 
 
-    has_one :address, SalesAdmin.Address
+    belongs_to :address, SalesAdmin.Address
 
     def changeset(customer, params \\ %{}) do
       customer

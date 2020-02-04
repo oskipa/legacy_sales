@@ -8,3 +8,5 @@ config :sales_admin, SalesAdmin.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost"
+
+import_config "#{Mix.env()}.exs"
