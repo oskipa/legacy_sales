@@ -13,4 +13,12 @@ defmodule SalesAdmin.LegacyImporterTest do
     
     assert Enum.count(result) > 0
   end
+
+  test "add customer" do
+    row = ["Jack Burton","Premium Cowboy Boots",149.99,1,"Carpenter Outfitters","99 Factory Drive"]
+
+    customer = SalesAdmin.LegacyImporter.get_customer(row)
+
+    assert customer.__struct__ == SalesAdmin.Customer
+  end
 end

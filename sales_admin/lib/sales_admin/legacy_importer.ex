@@ -29,7 +29,20 @@ defmodule SalesAdmin.LegacyImporter do
       _ -> 
         raise("LegacyImporter: serious error  while parsing csv data")
     end
+
+    @doc """
+    Finds or creates a customer
+
+    Returns %SalesAdmin.Customer{}
+
+    ## Params
+      - row, List, list with parsed legacy csv format
+    """
+    def get_customer(row) do
+      data = Enum.at(row, 0) |> String.split " "
+
+
+    end
   end
-  
   
 end
