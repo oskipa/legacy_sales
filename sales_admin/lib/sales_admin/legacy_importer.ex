@@ -19,16 +19,10 @@ defmodule SalesAdmin.LegacyImporter do
 
   """
   def parse_csv(path) do
-    case File.open(path, [:read, :charlist]) do
-      {:ok, file} -> 
-        IO.puts("the path >#{path}<")
-        content = File.read!(file)
-
-        IO.puts "content #{content}"
-
-        file
-        |> File.stream!
-        |> CSV.parse_stream(skip_headers: false)
+    case File.read(path) do
+      {:ok, content} -> 
+        content
+        |> CSV.parse_string(skip_headers: false)
       {:error, reason} -> 
         #{:error, reason} 
         nil

@@ -10,9 +10,7 @@ defmodule SalesAdmin.LegacyImporterTest do
     path = "test/fixtures/legacy_import.csv"
 
     result = SalesAdmin.LegacyImporter.parse_csv(path)
-
-    IO.inspect(result)
     
-    assert result != nil
+    assert Enum.count(result) > 0
   end
 end
