@@ -40,6 +40,7 @@ defmodule SalesAdmin.LegacyImporter do
     """
     def get_customer(row) do
       data = Enum.at(row, 0) |> String.split " "
+    
 
 
     end

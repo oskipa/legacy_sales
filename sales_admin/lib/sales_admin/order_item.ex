@@ -13,7 +13,7 @@ defmodule SalesAdmin.OrderItem do
 
   def changeset(order_item, params \\ %{}) do
     order_item
-    |> cast(params, [:price, :quantity, :order, :product])
-    |> validate_required([:price, :quantity, :order, :product])
+    |> cast(params, [:price, :quantity, :order_id, :product_id])
+    |> validate_required([:price, :quantity, :order_id, :product_id])
   end
 end

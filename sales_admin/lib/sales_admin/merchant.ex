@@ -11,7 +11,7 @@ defmodule SalesAdmin.Merchant do
 
   def changeset(merchant, params \\ %{}) do
     merchant
-    |> cast(params, [:name, :address])
+    |> cast(params, [:name, :address_id])
     |> validate_required([:name])
     |> validate_length(:name, min: 3)
   end

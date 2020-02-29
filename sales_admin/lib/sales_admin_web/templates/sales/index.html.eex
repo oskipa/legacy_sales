@@ -1,0 +1,46 @@
+<h1>Current Sales: $<%= assigns[:total] %> </h1>
+
+<%= if assigns[:message] do %>
+<section class="row">
+  <div class="alert alert-danger">
+    <%= assigns[:message] %>
+  </div>
+</section>
+<% end %>
+
+<section class="row">
+  <div class="column">
+    <%= button("New Order", to: "/orders/new", method: :get) %>
+  </div>
+
+  <div class="column">
+    <%= button("Legacy Import", to: "/sales/legacy_import", method: :get) %>
+  </div>
+</section>
+
+<section class="row">
+  <h2>Recent Sales</h2>
+</section>
+
+<section class="row">
+  <table>
+    <tr>
+      <th>Customer Name</th>
+      <th>Item Description</th>
+      <th>Item Price</th>
+      <th>Quantity</th>
+      <th>Merchant Name</th>
+      <th>Merchant Address</th>
+    </tr>
+    <%= for sale <- assigns[:sales] do %>
+      <tr>
+        <td><%= Enum.at(sale, 0)  %></td>
+        <td><%= Enum.at(sale, 1)  %></td>
+        <td><%= Enum.at(sale, 2)  %></td>
+        <td><%= Enum.at(sale, 3)  %></td>
+        <td><%= Enum.at(sale, 4)  %></td>
+        <td><%= Enum.at(sale, 5)  %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>

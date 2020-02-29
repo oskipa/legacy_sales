@@ -1,0 +1,23 @@
+<section>
+  <h2>Legacy Import System</h2>
+</section>
+
+<%= if assigns[:message] do %>
+<section class="row">
+  <div class="alert alert-danger">
+    <%= assigns[:message] %>
+  </div>
+</section>
+<% end %>
+
+<section class="row">
+  <%= form_for @changeset, Routes.sales_path(@conn, :process_legacy_import), [multipart: true] , fn form -> %>
+    <label>
+      File : <%=  file_input(form, :file_name) %>
+    </label>
+    
+    <%= submit "Submit" %>
+
+  <% end %>
+</section>
+

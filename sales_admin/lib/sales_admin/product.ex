@@ -5,7 +5,7 @@ defmodule SalesAdmin.Product do
   schema "products" do
     field :name, :string 
     field :description, :string 
-    field :unit_price, :integer 
+    field :unit_price, :decimal 
     field :product_code, :string 
     timestamps()
   end
@@ -13,9 +13,8 @@ defmodule SalesAdmin.Product do
   def changeset(product, params \\ %{}) do
     product
     |> cast(params, [:name, :description, :unit_price, :product_code])
-    |> validate_required([:name, :unit_price, :product_code])
+    |> validate_required([:name, :unit_price])
     |> validate_length(:name, min: 3)
-    |> validate_length(:product_code, min: 1)
     |> validate_number(:unit_price, greater_than: -1.0)
   end
 end

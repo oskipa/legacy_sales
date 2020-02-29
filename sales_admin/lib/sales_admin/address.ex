@@ -4,7 +4,7 @@ defmodule SalesAdmin.Address do
   
   schema("addresses") do
     field :address, :string
-    field :fieldress_2, :string
+    field :address_2, :string
     field :city, :string
     field :state, :string
     field :postal_code, :string

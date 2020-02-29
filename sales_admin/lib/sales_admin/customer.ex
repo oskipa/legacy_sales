@@ -3,7 +3,7 @@ defmodule SalesAdmin.Customer do
   import Ecto.Changeset
 
   schema "customers" do
-    field :first_name, :string 
+    field :first, :string 
     field :last_name, :string
     field :middle_name, :string
     timestamps() 
@@ -12,9 +12,9 @@ defmodule SalesAdmin.Customer do
 
     def changeset(customer, params \\ %{}) do
       customer
-      |> cast(params, [:first_name, :last_name, :middle_name, :address])
-      |> validate_required([:first_name, :last_name]) 
-      |> validate_length(:first_name, min: 1)
+      |> cast(params, [:first, :last_name, :middle_name, :address_id])
+      |> validate_required([:first, :last_name]) 
+      |> validate_length(:first, min: 1)
       |> validate_length(:last_name, min: 1)
     end
   end
