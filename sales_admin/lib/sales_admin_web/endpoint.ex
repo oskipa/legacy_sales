@@ -29,6 +29,7 @@ defmodule SalesAdminWeb.Endpoint do
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
+    length: 50_000_000, 
     json_decoder: Phoenix.json_library()
 
   plug Plug.MethodOverride

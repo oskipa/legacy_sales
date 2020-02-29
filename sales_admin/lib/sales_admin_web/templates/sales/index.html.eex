@@ -10,10 +10,6 @@
 
 <section class="row">
   <div class="column">
-    <%= button("New Order", to: "/orders/new", method: :get) %>
-  </div>
-
-  <div class="column">
     <%= button("Legacy Import", to: "/sales/legacy_import", method: :get) %>
   </div>
 </section>
